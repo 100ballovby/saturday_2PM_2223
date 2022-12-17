@@ -12,6 +12,7 @@ while action != 7:
         students.create_struct_array()
         print('Добавлено!\n\n')
     elif action == 2:
+        print(*students.dictionary.keys(), sep=" | ")
         key = input('По какому параметру сортируем?')
         students.sort_sctruct_array(key)
         print('Отсортировано!\n\n')
@@ -25,7 +26,7 @@ while action != 7:
     elif action == 5:
         pass
     elif action == 6:
-        pass
+        students.show_all()
     else:
         print('Такого действия нет!')
 
