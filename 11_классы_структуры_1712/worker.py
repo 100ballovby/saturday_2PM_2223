@@ -22,9 +22,10 @@ class Struct:
         :param arr: список словарей
         :return: список с добавленным словарем
         """
+        new_dict = {}  # словарь постоянно будет очищаться
         for key in self.dictionary.keys():
-            self.dictionary[key] = input(f'Value of key {key}: ')
-        self.array.append(self.dictionary)
+            new_dict[key] = input(f'Value of key {key}: ')
+        self.array.append(new_dict)
 
     def sort_sctruct_array(self, key):
         """
