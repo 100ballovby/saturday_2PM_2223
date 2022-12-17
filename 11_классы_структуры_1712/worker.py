@@ -68,3 +68,23 @@ class Struct:
                 """
                 self.array[index][key] = input(f'Value of key {key}: ') or self.array[index][key]
 
+    def show_all(self):
+        for i in range(len(self.array)):  # повторить по количеству студентов раз
+            print(f'Студент №{i + 1}')
+            for key in self.array[i]:  # перебираю ключи в словаре i
+                print(f'{key}: {self.array[i][key]};')
+            print()  # разделю инфу о студентах пустой строкой
+
+
+
+def menu():
+    print("""
+    Выберите действие:
+    1 - Ввод массива структур 
+    2 - Сортировка массива структур 
+    3 - Поиск в массиве структур
+    4 - Изменение массива структур 
+    5 - Удаление структуры из массива 
+    6 - Вывод массива структур;
+    7 - Выход. 
+    """)
