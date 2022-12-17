@@ -55,7 +55,7 @@ def edit_struct(arr: list, index: int) -> list:
         print("Nothing here!")
         return arr  # вернуть список словарей в изначальном виде
     else:
-        for key in arr[i].keys():  # перебираю ключи найденного словаря
+        for key in arr[index].keys():  # перебираю ключи найденного словаря
             """
             input, если ничего не написать, возвращает пустую строчку '',
             эта пустая строка интерпретируется как значение false.
@@ -66,7 +66,7 @@ def edit_struct(arr: list, index: int) -> list:
             при не написании чего-либо в инпут, 
             у ключа останется старое значение. 
             """
-            arr[i][key] = input(f'Value of key {key}: ') or arr[i][key]
+            arr[index][key] = input(f'Value of key {key}: ') or arr[i][key]
         return arr
 
 for i in range(2):
