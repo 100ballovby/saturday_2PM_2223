@@ -33,7 +33,11 @@ class Struct:
         :param key: ключ, по которому происходит сортировка
         :return: отсортированный список словарей
         """
-        self.array.sort(key=itemgetter(key))
+        try:
+            self.array.sort(key=itemgetter(key))
+            return 0
+        except KeyError:
+            return 1
 
     def search_struct_array(self, val: str) -> int:
         """
@@ -77,10 +81,13 @@ class Struct:
             print()  # разделю инфу о студентах пустой строкой
 
     def delete_student(self, number):
-        if number == -1:
-            self.array = []
-        else:
-            self.array.pop(number-1)
+        try:
+            if number == -1:
+                self.array = []
+            else:
+                self.array.pop(number-1)
+        except IndexError:
+            print('Такого индекса не существует!')
 
 
 
