@@ -24,7 +24,8 @@ while action != 7:
         stud_n = int(input('Введите порядковый номер студента: '))
         students.edit_struct(stud_n)
     elif action == 5:
-        pass
+        stud_n = int(input('Введите порядковый номер студента, чтобы его удалить или -1, чтобы удалить всех: '))
+        students.delete_student(stud_n)
     elif action == 6:
         students.show_all()
     else:

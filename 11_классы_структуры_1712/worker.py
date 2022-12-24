@@ -76,6 +76,12 @@ class Struct:
                 print(f'{key}: {self.array[i][key]};')
             print()  # разделю инфу о студентах пустой строкой
 
+    def delete_student(self, number):
+        if number == -1:
+            self.array = []
+        else:
+            self.array.pop(number-1)
+
 
 
 def menu():
