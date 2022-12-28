@@ -1,5 +1,5 @@
 import pygame as pg
-import sys  # работа с функциями ОС
+import game_functions as gf
 from settings import Config
 from ship import Ship
 
@@ -14,12 +14,9 @@ def run():
     # цвет фона игры
     pg.display.set_caption('Battle Ship!')  # название игры в окошке
     while True:
-        for event in pg.event.get():  # обрабатываю события
-            if event.type == pg.QUIT:  # если нажали на крестик
-                sys.exit()  # закрыть окно
-            screen.fill(game_config.bg_color)
-            ship.blit()
-        pg.display.flip()  # отображение последнего прорисованного кадра
+        gf.check_events(ship)  # трекаем события в игре
+        ship.update()
+        gf.update_screen(game_config, screen, ship)  # обновление экрана игры
 
 
 run()
