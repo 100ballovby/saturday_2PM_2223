@@ -1,4 +1,5 @@
 import pygame as pg
+from pygame.sprite import Group  # группа пуль, к которым можно применять методы
 import game_functions as gf
 from settings import Config
 from ship import Ship
@@ -10,13 +11,14 @@ def run():
     screen = pg.display.set_mode((game_config.screen_width,
                                  game_config.screen_height))  # окно игры и размер
     ship = Ship(screen)
-
+    bullets = Group()  # группируем объекты-пули
     # цвет фона игры
     pg.display.set_caption('Battle Ship!')  # название игры в окошке
     while True:
-        gf.check_events(ship)  # трекаем события в игре
+        gf.check_events(ship, game_config, screen, bullets)  # трекаем события в игре
         ship.update()
-        gf.update_screen(game_config, screen, ship)  # обновление экрана игры
+        bullets.update()
+        gf.update_screen(game_config, screen, ship, bullets)  # обновление экрана игры
 
 
 run()
