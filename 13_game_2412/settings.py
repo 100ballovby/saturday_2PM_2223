@@ -6,3 +6,8 @@ class Config:
         self.screen_height = resolution[1]
         self.bg_color = bg_color
 
+        # параметры пули
+        self.bullet_width = 3
+        self.bullet_height = 15
+        self.bullet_color = 60, 60, 60
+
